@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: authorization-server
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5433/jpa}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:nowhere}
+  sql:
+    init:
+      mode: always
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties.hibernate:
+      properties.hibernate.dialect: org.hibernate.dialect.PostgresSQLDialect
+    database: postgresql
