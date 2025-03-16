@@ -2,7 +2,7 @@ package com.jpa.ccondigo.repo;
 
 import com.jpa.ccondigo.repo.entity.Client;
 import com.jpa.ccondigo.repo.entity.Invoice;
-import com.jpa.ccondigo.repo.entity.uno.uno.OneToOneService;
+import com.jpa.ccondigo.repo.entity.uno.uno.OneToOneServiceData;
 import com.jpa.ccondigo.repo.repository.AddressRepository;
 import com.jpa.ccondigo.repo.repository.ClientRepository;
 import com.jpa.ccondigo.repo.repository.InvoiceRepository;
@@ -17,9 +17,14 @@ public class BaseJpaApplication implements CommandLineRunner {
 	private final AddressRepository addressRepository;
 	private final ClientRepository clientRepository;
 	private final InvoiceRepository invoiceRepository;
-	private final OneToOneService oneToOneService;
+	private final OneToOneServiceData oneToOneService;
 
-	public BaseJpaApplication(AddressRepository addressRepository, ClientRepository clientRepository, InvoiceRepository invoiceRepository, OneToOneService oneToOneService) {
+	public BaseJpaApplication(
+			AddressRepository addressRepository,
+			ClientRepository clientRepository,
+			InvoiceRepository invoiceRepository,
+			OneToOneServiceData oneToOneService)
+	{
         this.addressRepository = addressRepository;
         this.clientRepository = clientRepository;
 		this.invoiceRepository = invoiceRepository;

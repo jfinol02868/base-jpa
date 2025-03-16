@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class OneToOneService {
+public class OneToOneServiceData {
 
     private final SocioRepository socioRepository;
     private final TarjetaRepository tarjetaRepository;
@@ -46,6 +46,14 @@ public class OneToOneService {
     }
 
     public void runUpdate() {
+
+        // 1.- Buscamos el objeto padre
+        // 2.- Actualizamos los datos del objeto padre
+        // 3.- Actualizamos los datos del objeto hijo
+        // 4.- Si el objeto hijo no existe, lo creamos y lo asociamos al objeto padre
+        // 5.- Mandamos a persistir el objeto padre
+        // 6.- Si el objeto hijo existe solo lo actualizamos sin asociarlo al objeto padre ya esta en la sesion de hibernate
+
         Optional<Socio> socioOptional = socioRepository.findById("12345678A");
         if (socioOptional.isPresent()) {
             Socio socio = socioOptional.get();
